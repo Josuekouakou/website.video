@@ -1,0 +1,200 @@
+/* Reset de styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: #4CAF50; /* Couleur principale */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+.logo {
+    max-width: 110px; /* Limite la largeur du logo */
+    height: auto; /* Conserve le ratio d'aspect */
+    margin-bottom: 20px; /* Espace sous le logo */
+    display: block; /* Permet au logo d'être centré */
+    margin-left: 12px;
+    text-align: left;
+    margin-right: auto; /* Centre le logo horizontalement */
+}
+
+/* Banner 
+.banner {
+    background: url('banner-image.jpg') no-repeat center center/cover; /*Image de fond 
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}*/
+
+/* Carousel */
+
+#accueil {
+    background-color: #f0f0f0; /* Couleur de fond claire */
+    text-align: center; /* Centre le texte */
+    padding: 60px 20px; /* Espacement intérieur */
+    margin-bottom: 40px; /* Espacement en bas */
+    border: 2px solid #4CAF50; /* Contour vert */
+    border-radius: 12px; /* Coins arrondis */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombre pour donner de la profondeur */
+}
+
+.banner {
+    max-width: 800px; /* Largeur maximale pour le texte */
+    margin: 0 auto; /* Centre le contenu */
+    padding: 30px; /* Espacement intérieur */
+    border-radius: 10px; /* Coins arrondis pour le conteneur */
+    background: rgba(255, 255, 255, 0.9); /* Fond blanc semi-transparent */
+}
+
+h2 {
+    font-size: 36px; /* Taille de police pour le titre */
+    margin-bottom: 15px; /* Espace sous le titre */
+    color: #4CAF50; /* Couleur du titre */
+    font-weight: bold; /* Gras pour le titre */
+}
+
+p {
+    font-size: 20px; /* Taille de police pour le paragraphe */
+    line-height: 1.6; /* Espacement entre les lignes */
+    color: #333; /* Couleur du texte */
+    margin: 0; /* Supprime la marge par défaut */
+}
+
+
+#carousel {
+    position: relative;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.Rotation_image {
+    display: none; /* Masquer toutes les images par défaut */
+    width: 100%; /* Images responsive */
+    border-radius: 8px; /* Coins arrondis */
+}
+
+#prev, #next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+#prev:hover, #next:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+#prev { left: 10px; }
+#next { right: 10px; }
+
+/* Produits */
+#produits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.produit {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+    width: 200px; /* Largeur fixe pour les produits */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.produit img {
+    max-width: 100%;
+    border-radius: 5px; /* Coins arrondis pour les images */
+}
+
+/* Formulaire de contact */
+form {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #333;
+    color: white;
+}
+
+
+#video {
+    text-align: left; /* Centre le contenu */
+    margin: 30px 0; /* Ajoute de l'espace autour de la section */
+}
+
+video {
+    border-radius: 8px; /* Coins arrondis pour la vidéo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère autour de la vidéo */
+}
+
+#video video {
+    max-width: 50%; /* La vidéo prend la largeur maximale de son conteneur */
+    height: auto; /* Conserve le ratio d'aspect */
+    width: 200px; /* Largeur fixe de 400 pixels */
+}

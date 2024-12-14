@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NHOUS ELEGANCE</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+    <header>
+        <img src="e-commerce-logo.png" alt="le-commerce-logo.png" class="logo">
+        <h1>NHOUS ELEGANCE</h1>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#produits">Produits</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil">
+        <div class="banner">
+            <h2>Bienvenue chez NHOUS ELEGANCE</h2>
+            <p>Découvrez nos produits tendance !</p>
+        </div>
+    </section>
+
+
+   
+
+<section id="carousel">
+    <div class="image_rotation">
+        <img src="el.jpg" class="Rotation_image" alt="image 1">
+        <img src="elo.jpg" class="Rotation_image" alt="image 2">
+        <img src="le.jpg" class="Rotation_image" alt="image 3">
+        <img src="leo.jpg" class="Rotation_image" alt="image 4">
+        <img src="lo.jpg" class="Rotation_image" alt="image 5">
+        <img src="loe.jpg" class="Rotation_image" alt="image 6">
+        <img src="dfeggk.jpg" class="Rotation_image" alt="image 7">
+        <img src="efgh.jpg" class="Rotation_image" alt="image 8">
+        <img src="hab.jpg" class="Rotation_image" alt="image 9">
+        <img src="habtt.jpg" class="Rotation_image" alt="image 10">
+        <img src="hahha.jpg" class="Rotation_image" alt="image 11">
+        <img src="haom.jpg" class="Rotation_image" alt="image 12">
+        <img src="hha.jpg" class="Rotation_image" alt="image 13">
+        <img src="hho.jpg" class="Rotation_image" alt="image 14">
+        <img src="HHOMOP.jpg" class="Rotation_image" alt="image 15">
+        <img src="hhoom.jpg" class="Rotation_image" alt="image 16">
+        <img src="hhp.jpg" class="Rotation_image" alt="image 17">
+        <img src="ho.jpg" class="Rotation_image" alt="image 18">
+        <img src="hoh.jpg" class="Rotation_image" alt="image 19">
+        <img src="hom.jpg" class="Rotation_image" alt="image 20">
+        <img src="homef.jpg" class="Rotation_image" alt="image 21">
+        <img src="homho.jpg" class="Rotation_image" alt="image 22">
+        <img src="homm.jpg" class="Rotation_image" alt="image 22">
+        <img src="homho.jpg" class="Rotation_image" alt="image 22">
+        <img src="mohh.jpg" class="Rotation_image" alt="image 22">
+        <img src="moop.jpgg" class="Rotation_image" alt="image 22">
+        <img src="moppm.jpg" class="Rotation_image" alt="image 22">
+        <img src="phoh.jpg" class="Rotation_image" alt="image 22">
+    </div>
+    <button id="prev" class="nav-button">❮</button>
+    <button id="next" class="nav-button">❯</button>
+</section>
+
+<div class="lightbox" id="lightbox">
+    <span class="close" id="closeLightbox">&times;</span>
+    <img class="lightbox-image" id="lightboxImage" alt="Image Agrandie">
+</div>
+
+<script>
+    const rotationImages = document.querySelectorAll('.Rotation_image');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const closeLightbox = document.getElementById('closeLightbox');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+
+    let currentIndex = 0;
+
+    function showImage(index) {
+        rotationImages.forEach((image, i) => {
+            image.style.display = (i === index) ? 'block' : 'none';
+        });
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % rotationImages.length;
+        showImage(currentIndex);
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + rotationImages.length) % rotationImages.length;
+        showImage(currentIndex);
+    }
+
+    // Afficher la première image au chargement
+    showImage(currentIndex);
+
+    // Événements pour les boutons de navigation
+    nextButton.addEventListener('click', nextImage);
+    prevButton.addEventListener('click', prevImage);
+
+    // Afficher l'image cliquée dans la lightbox
+    rotationImages.forEach((image) => {
+        image.addEventListener('click', () => {
+            lightbox.style.display = 'flex';
+            lightboxImage.src = image.src;
+        });
+    });
+
+    closeLightbox.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
+    });
+
+    // Faire défiler les images automatiquement
+    setInterval(nextImage, 3000); // Change l'image toutes les 3 secondes
+</script>
+    
+
+
+<section id="produits">
+    <h2>Produits en Vedette</h2>
+    <div class="produit">
+        <img src="le.jpg" class="produit img" alt="Produit 1">
+        <h3>Produit 1</h3>
+        <p>Prix : 29,99 €</p>
+        <button onclick="confirmerAjout('Produit 1', 29.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="leo.jpg" class="produit img" alt="Produit 2">
+        <h3>Produit 2</h3>
+        <p>Prix : 39,99 €</p>
+        <button onclick="confirmerAjout('Produit 2', 39.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="lo.jpg" class="produit img" alt="Produit 3">
+        <h3>Produit 3</h3>
+        <p>Prix : 12,99 €</p>
+        <button onclick="confirmerAjout('Produit 3', 12.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="loe.jpg" class="produit img" alt="Produit 4">
+        <h3>Produit 4</h3>
+        <p>Prix : 19,99 €</p>
+        <button onclick="confirmerAjout('Produit 4', 19.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="leo.jpg" class="produit img" alt="Produit 5">
+        <h3>Produit 5</h3>
+        <p>Prix : 20,99 €</p>
+        <button onclick="confirmerAjout('Produit 5', 20.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="elo.jpg" class="produit img" alt="Produit 6">
+        <h3>Produit 6</h3>
+        <p>Prix : 40,99 €</p>
+        <button onclick="confirmerAjout('Produit 6', 40.99)" class="button">Ajouter au Panier</button>
+    </div>
+
+
+    <div class="produit">
+        <img src="dfeggk.jpg" class="produit img" alt="Produit 7">
+        <h3>Produit 7</h3>
+        <p>Prix : 20,99 €</p>
+        <button onclick="confirmerAjout('Produit 7', 20.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="efgh.jpg" class="produit img" alt="Produit 8">
+        <h3>Produit 8</h3>
+        <p>Prix : 19,99 €</p>
+        <button onclick="confirmerAjout('Produit 8', 19.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="hab.jpg" class="produit img" alt="Produit 9">
+        <h3>Produit 9</h3>
+        <p>Prix : 12,99 €</p>
+        <button onclick="confirmerAjout('Produit 9', 12.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="habtt.jpg" class="produit img" alt="Produit 10">
+        <h3>Produit 10</h3>
+        <p>Prix : 12,99 €</p>
+        <button onclick="confirmerAjout('Produit 10', 11.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="hahha.jpg" class="produit img" alt="Produit 11">
+        <h3>Produit 11</h3>
+        <p>Prix : 20,99 €</p>
+        <button onclick="confirmerAjout('Produit 11', 20.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="haom.jpg" class="produit img" alt="Produit 12">
+        <h3>Produit 12</h3>
+        <p>Prix : 32,99 €</p>
+        <button onclick="confirmerAjout('Produit 12', 32.99)" class="button">Ajouter au Panier</button>
+    </div>
+
+    <div class="produit">
+        <img src="hha.jpg" class="produit img" alt="Produit 13">
+        <h3>Produit 13</h3>
+        <p>Prix : 29,99 €</p>
+        <button onclick="confirmerAjout('Produit 13', 29.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="hho.jpg" class="produit img" alt="Produit 14">
+        <h3>Produit 14</h3>
+        <p>Prix : 35,99 €</p>
+        <button onclick="confirmerAjout('Produit 14', 39.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="HHOMOP.jpg" class="produit img" alt="Produit 15">
+        <h3>Produit 15</h3>
+        <p>Prix : 22,99 €</p>
+        <button onclick="confirmerAjout('Produit 15', 22.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="hhoom.jpg" class="produit img" alt="Produit 16">
+        <h3>Produit 16</h3>
+        <p>Prix : 14,99 €</p>
+        <button onclick="confirmerAjout('Produit 16', 14.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="hhp.jpg" class="produit img" alt="Produit 7">
+        <h3>Produit 17</h3>
+        <p>Prix : 10,99 €</p>
+        <button onclick="confirmerAjout('Produit 17', 20.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="ho.jpg" class="produit img" alt="Produit 18">
+        <h3>Produit 18</h3>
+        <p>Prix : 45,99 €</p>
+        <button onclick="confirmerAjout('Produit 18', 45.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="hoh.jpg" class="produit img" alt="Produit 19">
+        <h3>Produit 19</h3>
+        <p>Prix : 16,99 €</p>
+        <button onclick="confirmerAjout('Produit 19', 16.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="hom.jpg" class="produit img" alt="Produit 20">
+        <h3>Produit 20</h3>
+        <p>Prix : 20,99 €</p>
+        <button onclick="confirmerAjout('Produit 20', 20.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="homef.jpg" class="produit img" alt="Produit 21">
+        <h3>Produit 21</h3>
+        <p>Prix : 32,99 €</p>
+        <button onclick="confirmerAjout('Produit 21', 32.99)" class="button">Ajouter au Panier</button>
+    </div>
+
+    <div class="produit">
+        <img src="mohh.jpg" class="produit img" alt="Produit 22">
+        <h3>Produit 22</h3>
+        <p>Prix : 29,99 €</p>
+        <button onclick="confirmerAjout('Produit 22', 29.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="moop.jpg" class="produit img" alt="Produit 23">
+        <h3>Produit 23</h3>
+        <p>Prix : 35,99 €</p>
+        <button onclick="confirmerAjout('Produit 23', 39.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="moppm.jpg" class="produit img" alt="Produit 24">
+        <h3>Produit 24</h3>
+        <p>Prix : 22,99 €</p>
+        <button onclick="confirmerAjout('Produit 24', 22.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="phoh.jpg" class="produit img" alt="Produit 25">
+        <h3>Produit 25</h3>
+        <p>Prix : 14,99 €</p>
+        <button onclick="confirmerAjout('Produit 25', 14.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="habtt.jpg" class="produit img" alt="Produit 26">
+        <h3>Produit 26</h3>
+        <p>Prix : 10,99 €</p>
+        <button onclick="confirmerAjout('Produit 26', 20.99)" class="button">Ajouter au Panier</button>
+    </div>
+    <div class="produit">
+        <img src="le.jpg" class="produit img" alt="Produit 27">
+        <h3>Produit 27</h3>
+        <p>Prix : 45,99 €</p>
+        <button onclick="confirmerAjout('Produit 27', 45.99)" class="button">Ajouter au Panier</button>
+    </div>
+</section>
+
+<script>
+    function confirmerAjout(produit, prix) {
+        // Vérifiez si l'utilisateur est connecté
+        const isLoggedIn = true; // Remplacez par la logique de connexion réelle
+
+        if (!isLoggedIn) {
+            alert("Veuillez vous connecter pour effectuer un achat.");
+            // Rediriger vers la page de connexion
+            window.location.href = '/login';
+        } else {
+            // Logique d'achat
+            fetch('/api/purchase', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ product: produit, price: prix }) // Envoie le produit et le prix
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(`${produit} a été ajouté au panier avec succès !`);
+                } else {
+                    alert("Erreur lors de l'ajout au panier. Veuillez réessayer.");
+                }
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+            });
+        }
+    }
+</script>
+
+<section id="video">
+    <h2>Découvrez notre Vidéo</h2>
+    <video controls width="100%" max-width="800px">
+        <source src="homhh.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la balise vidéo.
+    </video>
+    <video controls width="100%" max-width="800px">
+        <source src="dea.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la balise vidéo.
+    </video>
+    <video controls width="100%" max-width="800px">
+        <source src="deao.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la balise vidéo.
+    </video>
+    <video controls width="100%" max-width="800px">
+        <source src="deo.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la balise vidéo.
+    </video>
+    <video controls width="100%" max-width="800px">
+        <source src="deoa.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la balise vidéo.
+    </video>
+</section>
+
+<script>
+    const video = document.getElementById('myVideo');
+
+    function checkVideoVisibility() {
+        const rect = video.getBoundingClientRect();
+        const isVisible = (rect.top >= 0 && rect.bottom <= window.innerHeight);
+
+        if (isVisible) {
+            video.play(); // Joue la vidéo si elle est visible
+        } else {
+            video.pause(); // Met en pause la vidéo si elle n'est pas visible
+        }
+    }
+
+    // Écouteur d'événements pour le défilement et le redimensionnement
+    window.addEventListener('scroll', checkVideoVisibility);
+    window.addEventListener('resize', checkVideoVisibility);
+
+    // Vérifie la visibilité au chargement de la page
+    window.addEventListener('load', checkVideoVisibility);
+</script>
+
+    <section id="apropos">
+        <h2>À propos de nous</h2>
+        <p>Nous sommes une entreprise dédiée à la vente d'articles tendance et pratiques.<br>Nous mettons à vos disposition les meilleus produits qui puissent ixister sur le maché.
+        <br>l'effort est fourni de notre côté afind e vous founir la qualité ainsi que les produits les plus rechercher sur le marché. <br>faire des achat à NHOUS ELEGANCE, c'est de ne pas regrèter d'avoir faire de mauvais choix.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contactez-nous</h2>
+        <form>
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <section id="faq">
+        <h2>FAQ</h2>
+        <p>Réponses aux questions fréquentes sur nos produits.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 NHOUS ELEGANCE. Tous droits réservés.</p>
+    </footer>
+
+   
+
+    <div class="wds_1_126_0_Notification__root wds_1_126_0_Notification---theme-5-error wds_1_126_0_Notification---type-5-local" data-theme="error" data-type="local"><div class="wds_1_126_0_Notification__animator" style="overflow:hidden;transition:height 200ms;height:0"><div class="wds_1_126_0_Notification__animatorContent"></div></div></div>
+
+</body>
+</html>
